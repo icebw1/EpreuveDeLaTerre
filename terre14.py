@@ -18,13 +18,21 @@ erreur.
 t = []
 def verifTriage(t):
     i = 0
-    while i < len(t)-1:
-        resultat = int(t[i]) - int(t[i+1])
 
+    for nombre in t:
+        if t[i] == str:
+            print("Erreur")
+            exit()
+        i = i + 1
+
+    j = 0  
+    while j < len(t)-1:
+        resultat = int(t[j]) - int(t[j+1])
+        
         if resultat > 0:
             print("Pas triée !")
             exit()
-        i = i + 1
+        j = j + 1
 
     print("Triée !")
 
@@ -34,10 +42,15 @@ x = input("Taper des nombres entiers ")
 #Rangement des entiers dans un tableau en les splitant par le caractère espace
 tableau = x.split(" ")
 
-print(verifTriage(tableau))
+try:
 
-"""
-        if resultat != int:
-            print("Erreur")
-            exit()
-"""
+    i = 0  
+    while i < len(tableau):
+        tableau[i] = int(float(tableau[i]))
+        i = i + 1
+
+    print(verifTriage(tableau))
+
+except ValueError:
+    print("Erreur, la valeur entree est une chaine")
+    exit()
