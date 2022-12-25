@@ -19,19 +19,27 @@ Tu ne me la mettras pas à l’envers.
 $> ruby exo.rb
 Tu ne me la mettras pas à l’envers.
 
-
 Attention : gérez aussi les entiers négatifs.
 
-
 """
-print("Choisir un nombre")
+#Fonction
+def pairOuImpair(a):
+    resultat = entreeClavier % 2
 
-#Récupération du nombre tapé par l'utilisateur & indication à la machine que le nombre est bien un entier
-entreeClavier = int(input())
+    if resultat == 0:
+        print("Pair")
+    else:
+        print("Impair")
 
-resultat = entreeClavier % 2
+try:
+    #Parsing
+    print("Choisir un nombre")
+    entreeClavier = int(input())
 
-if resultat == 0:
-    print("Pair")
-else:
-    print("Impair")
+    #Affichage
+    pairOuImpair(entreeClavier)
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur, la valeur doit être un entier")
+    exit()

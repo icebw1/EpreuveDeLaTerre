@@ -11,10 +11,20 @@ suis
 solide
 !
 """
+#Fonction
+def ligneParLigne(a):
+    for ligne in a:
+        print(end=ligne)
+        if ligne == " ":
+            print(ligne)
 
-entreeClavier = input("Taper une phrase à afficher ligne/ligne")
+#Parsing
+entreeClavier = input("Taper une phrase à afficher ligne/ligne \n")
 
-for ligne in entreeClavier:
-    print(end=ligne)
-    if ligne == " ":
-        print(ligne)
+#Affichage
+ligneParLigne(entreeClavier)
+
+
+
+
+

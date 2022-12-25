@@ -15,6 +15,7 @@ $> ruby exo.rb “Salut”
 erreur.
 
 """
+#Fonction 
 t = []
 def verifTriage(t):
     i = 0
@@ -36,10 +37,8 @@ def verifTriage(t):
 
     print("Triée !")
 
-#Récupération des entiers tapés par l'utilisateur
+#Parsing
 x = input("Taper des nombres entiers ")
-
-#Rangement des entiers dans un tableau en les splitant par le caractère espace
 tableau = x.split(" ")
 
 try:
@@ -49,8 +48,10 @@ try:
         tableau[i] = int(float(tableau[i]))
         i = i + 1
 
+    #Affichage
     print(verifTriage(tableau))
 
+#Gestion d'erreur
 except ValueError:
     print("Erreur, la valeur entree est une chaine")
     exit()

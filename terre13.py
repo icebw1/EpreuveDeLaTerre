@@ -17,6 +17,7 @@ erreur.
 
 
 """
+#Fonction 
 def valeurMilieu(a, b, c):
     if c < a < b or b < a < c:
         return a
@@ -27,10 +28,26 @@ def valeurMilieu(a, b, c):
     elif  a == c == b:
         print("Erreur")
 
-#Récupération des 3 entiers tapés par l'utilisateur
-x = input("Taper 3 nombres entiers ")
+try:
+    #Parsing
+    x = input("Taper 3 nombres entiers \n")
+    tableau = x.split(" ")
 
-#Rangement des entiers dans un tableau en les splitant par le caractère espace
-tableau = x.split(" ")
+    #Gestion d'erreur
+    i = 1
+    for n in tableau:
+        i += 1
 
-print(valeurMilieu(int(tableau[0]), int(tableau[1]), int(tableau[2])))
+        if i != 3:
+            print("Erreur, saisissez 3 nombres") 
+            exit()
+
+
+    #Affichage
+    print(valeurMilieu(int(tableau[0]), int(tableau[1]), int(tableau[2])))
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur, saisissez 3 nombres") 
+    exit()
+

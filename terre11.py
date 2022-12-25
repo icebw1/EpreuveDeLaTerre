@@ -12,7 +12,7 @@ $> ruby exo.rb 23:40
 Attention : midi et minuit.
 
 """
-#Fonction Conversion heure au format 24h en heure au format 12h
+#Fonction 
 def Format12h(h,m):
     if h > 12 and h < 24:
         h = h - 12
@@ -27,12 +27,17 @@ def Format12h(h,m):
             print("00" + ":" + str(m))
         else:
             print("Erreur, vous n'avez tapé ni 1, ni 0")
-    
-#Récupération de l'heure tapée par l'utilisateur & conversion en entier
-print("Taper l'heure au format HH:MM")
-x = input()
-#Stockage de l'heure dans un tableau deux colonnes
-heure = x.split(":")
-#Envoi des de l'heure et des minutes tapé par l'utilisateur à la fonction Format12h
-print(Format12h(int(heure[0]), int(heure[1])))
 
+try:
+    #Parsing
+    print("Taper l'heure au format HH:MM")
+    x = input()
+    heure = x.split(":")
+
+    #Affichage
+    print(Format12h(int(heure[0]), int(heure[1])))
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur, vous devez taper l'heure au format indiqué")
+    exit()

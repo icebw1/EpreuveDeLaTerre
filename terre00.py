@@ -11,11 +11,10 @@ $>
 
 Attention : votre programme devra utiliser une boucle.
 """
-
+#Parsing
 alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
 for lettre in alphabet:
     print(end=lettre)
     if lettre == "z":
         print("\n")
-    

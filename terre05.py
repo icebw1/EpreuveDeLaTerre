@@ -19,18 +19,30 @@ $> python exo.py 3 5
 erreur.
 
 """
-print("Choisir un dividende")
-#Récupération du dividende tapé par l'utilisateur & indication à la machine que le nombre est bien un entier
-dividende = int(input())
-
-print("Choisir un diviseur")
-diviseur = int(input())
-
-while diviseur != 0:
-    resultat = dividende / diviseur
-    reste = dividende % diviseur
-    print("Résultat : " + str(resultat) + " Reste : " + str(reste))
-
-if diviseur == 0:
-    print("La division par 0 est impossible")
+#Fonction
+def Division(a, b):
     
+    if b != 0:
+        resultat = a / b
+        reste = a % b
+        print("Résultat : " + str(resultat) + " Reste : " + str(reste))
+
+    elif b == 0:
+        print("La division par 0 est impossible")
+
+
+try:
+    #Parsing
+    print("Choisir un dividende")
+    dividende = int(input())
+
+    print("Choisir un diviseur")
+    diviseur = int(input())
+
+    #Affichage
+    Division(dividende, diviseur)
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur, la valeur doit être un entier")
+    exit()

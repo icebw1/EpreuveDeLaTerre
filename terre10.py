@@ -13,7 +13,7 @@ Non, 6 n’est pas un nombre premier.
 
 Attention : 0 et 1 ne sont pas des nombres premiers. Gérez les erreurs d’arguments.
 """
-#Fonction Premier <=> 
+#Fonction
 def Premier(a):
     i = 2
     while i < a:
@@ -27,17 +27,30 @@ def Premier(a):
             exit()
 
         i = i + 1
-    
-#Récupération de l'entrée tapée par l'utilisateur & conversion en entier
-print("Taper la valeur du nombre")
-x = int(input())
 
-if x == 0:
-    print("Erreur, 0 n'est pas un nombre premier")
+try: 
+    #Parsing
+    print("Taper la valeur du nombre")
+    x = int(input())
+
+    #Gestion d'erreur
+    if x < 0:
+        print("Erreur, le nombre doit être positif")
+        exit()
+
+    elif x == 0:
+        print("Erreur, 0 n'est pas un nombre premier")
+        exit()
+
+    elif x == 1:
+        print("Erreur, 1 n'est pas un nombre premier")
+        exit()
+
+    #Affichage
+    print(Premier(x))
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur, vous devez taper un entier")
     exit()
 
-if x == 1:
-    print("Erreur, 1 n'est pas un nombre premier")
-    exit()
-
-print(Premier(x))

@@ -17,8 +17,20 @@ Attention : je compte sur vous pour gérer les potentielles erreurs d’argument
 def Racine(a):
     return pow(a, 1/2)
 
-#Récupération de l'entrée tapée par l'utilisateur & conversion en entier
-print("Taper la valeur du nombre")
-x = int(input())
+try:
+    #Parsing
+    print("Taper le nombre dont vous voulez connaître la racine")
+    x = int(input())
 
-print("Resultat = ", Racine(x))
+    #Gestion d'erreur
+    if x < 0:
+        print("Erreur, le nombre doit être positif")
+        exit()
+
+    #Affichage
+    print("Resultat = ", Racine(x))
+
+#Gestion d'erreur
+except ValueError:
+    print("Erreur")
+    exit()

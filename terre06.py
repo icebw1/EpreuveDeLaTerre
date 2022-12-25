@@ -16,17 +16,24 @@ Michel
 Attention : je compte sur vous pour gérer les potentielles erreurs d’arguments.
 
 """
-#Récupération de l'entrée tapée par l'utilisateur 
-entreeClavier = input()
 
-tableau = []
+#Fonction
+def inverseChaine(chaine):
+    tableau = []
 
-for lettre in entreeClavier:
-    tableau.append(lettre)
+    for lettre in chaine:
+        tableau.append(lettre)
 
-tailleDeLaChaine = len(tableau)
+    tailleDeLaChaine = len(tableau)
 
-#Boucle pour afficher la chaîne inversée
-while tailleDeLaChaine > 0:
-    print(end=tableau[tailleDeLaChaine-1])
-    tailleDeLaChaine = tailleDeLaChaine - 1 
+    #Boucle pour afficher la chaîne inversée
+    while tailleDeLaChaine > 0:
+        print(end=tableau[tailleDeLaChaine-1])
+        tailleDeLaChaine = tailleDeLaChaine - 1 
+
+#Parsing
+entreeClavier = input("Taper une phrase à inverser \n")
+
+#Affichage
+inverseChaine(entreeClavier)
+

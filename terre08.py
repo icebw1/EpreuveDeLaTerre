@@ -15,7 +15,6 @@ $> node exo.js 2 3
 Attention : je compte sur vous pour gérer les potentielles erreurs d’arguments.
 
 """
-
 #Fonction Puissance
 def Puissance(a, b):
     i = 1
@@ -25,15 +24,16 @@ def Puissance(a, b):
         i = i + 1
     return Resultat
 
-#Récupération de l'entrée tapée par l'utilisateur & conversion en entier
-
+#Parsing
 print("Taper la valeur du nombre")
 x = int(input())
 print("Taper la valeur de son exposant")
 y = int(input())
 
+#Gestion d'erreur
 if y < 0:
     print("Erreur, l'exposant ne peut être négatif")
     exit()
 
+#Affichage
 print("Resultat = ", Puissance(x, y))

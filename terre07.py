@@ -19,29 +19,31 @@ erreur.
 
 $> python exo.py 10
 erreur.
-
 """
-#Récupération de l'entrée tapée par l'utilisateur 
-entreeClavier = input()
+#Fonction
+def taille(t):
+    i = 0
+    for i in range(0, len(entreeClavier)):
+        tableau.append(entreeClavier[i])
+        i+=1
 
-#Tableau dans lequel sera stocké l'entrée
+    j = 0
+    for lettre in t:
+        j+=1
+
+    print(j)
+
+
+#Parsing    
+entreeClavier = input("Taper une phrase pour en obtenir sa taille \n")
 tableau = []
 
-#Remplissage du tableau
-for lettre in entreeClavier:
-    tableau.append(lettre)
+#Gestion d'erreur
+if entreeClavier.isdigit():
+    print("Erreur, l'élément tapé est un entier")
+    exit()
 
-#Verification que l'entrée ne contient pas d'espace
-for lettre in tableau:
-    if lettre == " ":
-        print("Erreur")
-        exit()
+#Affichage
+taille(entreeClavier)
 
-i = 0
-#La boucle tourne tant que le tableau contient des valeurs
-while tableau:
-    tableau.pop(-1) #La fonction pop permet de supprimer des valeurs, ici 1 seule
-    i = i + 1       #On compte le nombre de fois qu'un caractère a été supprimé
-
-print(i)
 
